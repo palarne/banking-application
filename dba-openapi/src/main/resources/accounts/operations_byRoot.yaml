@@ -1,0 +1,15 @@
+post:
+  tags:
+    - account
+  operationId: createAccount
+  requestBody:
+    required: true
+    content:
+      'application/json':
+        schema:
+          $ref: 'model.yaml#/AccountCreateType'
+  responses:
+    201:
+      description: created
+      schema:
+        'model.yaml#/AccountCreateResponseType'

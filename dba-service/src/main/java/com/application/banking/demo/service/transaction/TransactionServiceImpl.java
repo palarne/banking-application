@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.UUID;
 
+import static java.lang.String.format;
+
 @Service
 public class TransactionServiceImpl implements TransactionService {
 
@@ -21,7 +23,7 @@ public class TransactionServiceImpl implements TransactionService {
     public Transaction getTransaction(UUID transactionId) {
         val transaction = transactionRepository.findById(transactionId);
         if (!transaction.isPresent())
-            throw new Exception(String.format("transaction %s not found", transactionId));
+            throw new Exception(format("transaction %s not found", transactionId));
         return transaction.get();
     }
 

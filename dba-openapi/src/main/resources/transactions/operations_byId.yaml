@@ -1,0 +1,17 @@
+get:
+  tags:
+    - transaction
+  operationId: getTransaction
+  parameters:
+    - name: transactionId
+      in: path
+      required: true
+      schema:
+        $ref: 'properties.yaml#/transactionId'
+  responses:
+    '200':
+      description: ok
+      content:
+        'application/json':
+          schema:
+            $ref: 'model.yaml#/TransactionType'

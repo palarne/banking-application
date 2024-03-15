@@ -1,0 +1,15 @@
+transactionId:
+  type: string
+  format: uuid
+
+transactionAmount:
+  type: number
+
+transactionType:
+  type: string
+  enum:
+    - CREDIT
+    - DEBIT
+
+accountId:
+  type: string

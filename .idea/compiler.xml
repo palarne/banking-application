@@ -10,8 +10,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="dba-model" />
         <module name="dba-service" />
+        <module name="dba-webapp" />
+        <module name="dba-openapi" />
+        <module name="dba-model" />
         <module name="dba-persistence" />
       </profile>
     </annotationProcessing>

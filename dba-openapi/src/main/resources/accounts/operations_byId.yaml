@@ -1,0 +1,17 @@
+get:
+  tags:
+    - account
+  operationId: getAccount
+  parameters:
+    - name: accountId
+      in: path
+      required: true
+      schema:
+        $ref: 'properties.yaml#/accountId'
+  responses:
+    '200':
+      description: ok
+      content:
+        'application/json':
+          schema:
+            $ref: 'model.yaml#/AccountType'

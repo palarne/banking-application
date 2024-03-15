@@ -1,0 +1,32 @@
+TransactionType:
+  type: object
+  required:
+    - transactionId
+    - transactionAmount
+    - transactionType
+    - accountId
+  properties:
+    transactionId:
+      $ref: 'properties.yaml#/transactionId'
+    transactionAmount:
+      $ref: 'properties.yaml#/transactionAmount'
+    transactionType:
+      $ref: 'properties.yaml#/transactionType'
+    accountId:
+      $ref: 'properties.yaml#/accountId'
+
+TransactionCreateType:
+  type: object
+  required:
+    - transactionAmount
+    - accountId
+  properties:
+    $ref: 'properties.yaml#/transactionAmount'
+    accountId:
+      $ref: 'properties.yaml#/accountId'
+
+TransactionCreateResponseType:
+  type: object
+  properties:
+    transactionId:
+      $ref: 'properties.yaml#/transactionId'

@@ -1,0 +1,20 @@
+openapi: 3.0.0
+info:
+  title: demo banking api
+  version: v1
+servers:
+  - url: 'http://localhost:8080/api'
+tags:
+  - name: account
+    description: account api
+  - name: transaction
+    description: transaction api
+paths:
+  '/accounts':
+    $ref: 'accounts/operations_byRoot'
+  '/accounts/{accountId}':
+    $ref: 'accounts/operations_byId.yaml'
+  '/transactions':
+    $ref: 'transactions/operations_byRoot'
+  '/transactions/{transactionId}':
+    $ref: 'transactions/operations_byId.yaml'
