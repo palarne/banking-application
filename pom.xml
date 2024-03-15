@@ -13,6 +13,7 @@
         <module>dba-model</module>
         <module>dba-persistence</module>
         <module>dba-service</module>
+        <module>dba-webapp</module>
     </modules>
 
     <properties>
