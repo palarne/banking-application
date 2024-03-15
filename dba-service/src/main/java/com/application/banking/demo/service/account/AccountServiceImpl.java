@@ -7,6 +7,8 @@ import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import static java.lang.String.format;
+
 @Service
 public class AccountServiceImpl implements AccountService {
 
@@ -18,7 +20,7 @@ public class AccountServiceImpl implements AccountService {
     public Account getAccount(String accountId) {
         val account = accountRepository.findById(accountId);
         if (!account.isPresent())
-            throw new Exception(String.format("account %s not found", accountId));
+            throw new Exception(format("account %s not found", accountId));
         return account.get();
     }
 
