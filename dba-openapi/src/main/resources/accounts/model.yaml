@@ -1,0 +1,29 @@
+AccountType:
+  type: object
+  required:
+    - accountId
+    - accountBalance
+  properties:
+    accountId:
+      $ref: 'properties.yaml#/accountId'
+    accountBalance:
+      $ref: 'properties.yaml#/accountBalance'
+
+AccountCreateType:
+  type: object
+  required:
+    - accountId
+    - accountBalance
+  properties:
+    accountId:
+      $ref: 'properties.yaml#/accountId'
+    accountBalance:
+      $ref: 'properties.yaml#/accountBalance'
+
+AccountCreateResponseType:
+  type: object
+  required:
+    - accountId
+  properties:
+    accountId:
+      $ref: 'properties.yaml#/accountId'

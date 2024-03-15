@@ -21,6 +21,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+        </dependency>
         <!-- openapi -->
         <dependency>
             <groupId>org.openapitools</groupId>
@@ -30,6 +38,17 @@
             <groupId>org.openapitools</groupId>
             <artifactId>openapi-generator-maven-plugin</artifactId>
             <scope>provided</scope>
+        </dependency>
+        <!-- jackson -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.fasterxml.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openapitools</groupId>
+            <artifactId>jackson-databind-nullable</artifactId>
+            <version>${jackson.datbind.nullable.version}</version>
         </dependency>
     </dependencies>
 
@@ -44,20 +63,20 @@
                 <artifactId>openapi-generator-maven-plugin</artifactId>
                 <executions>
                     <execution>
+                        <phase>compile</phase>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <inputSpec>
-                                ${project.basedir}/src/main/resources/api.yml
-                            </inputSpec>
+                            <inputSpec>${project.basedir}/src/main/resources/api.yaml</inputSpec>
                             <generatorName>spring</generatorName>
-                            <apiPackage>com.application.banking.demo.openapi.api</apiPackage>
-                            <modelPackage>com.application.banking.demo.openapi.model</modelPackage>
-                            <supportingFilesToGenerate>
-                                ApiUtil.java
-                            </supportingFilesToGenerate>
+                            <apiPackage>com.application.banking.demo.api</apiPackage>
+                            <modelPackage>com.application.banking.demo.model</modelPackage>
                             <configOptions>
+                                <sourceFolder>src/gen/java/main</sourceFolder>
+                                <documentationProvider>none</documentationProvider>
+                                <interfaceOnly>true</interfaceOnly>
+                                <serializableModel>true</serializableModel>
                                 <delegatePattern>true</delegatePattern>
                             </configOptions>
                         </configuration>
