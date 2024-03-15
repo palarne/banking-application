@@ -12,6 +12,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="dba-service" />
         <module name="dba-webapp" />
+        <module name="dba-openapi" />
         <module name="dba-model" />
         <module name="dba-persistence" />
       </profile>

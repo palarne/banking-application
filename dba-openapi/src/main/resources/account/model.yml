@@ -1,0 +1,10 @@
+AccountType:
+  type: object
+  required:
+    - accountId
+    - accountBalance
+  properties:
+    accountId:
+      type: string
+    accountBalance:
+      type: number
